@@ -1,0 +1,26 @@
+{
+    "name": "imper86/jobby-cron-bundle",
+    "description": "symfony bundle for jobbyphp/jobby",
+    "keywords": ["symfony", "bundle", "jobby", "cron", "crontab"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "imper",
+            "email": "me@imper.info"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "hellogerard/jobby": "^3.4",
+        "symfony/config": "^3.4 || ^4.0",
+        "symfony/dependency-injection": "^3.4 || ^4.0",
+        "symfony/http-kernel": "^3.4 || ^4.0",
+        "symfony/console": "^3.4 || ^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Imper86\\JobbyBundle\\": "src"
+        }
+    }
+}

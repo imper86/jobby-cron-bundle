@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Imper86\JobbyBundle\Command\ExecuteCommand" autoconfigure="false" autowire="false" public="false">
+            <argument key="$jobby" type="service" id="Jobby\Jobby" />
+            <tag name="console.command" />
+        </service>
+
+        <service id="Imper86\JobbyBundle\Command\ListCommand" autoconfigure="false" autowire="false" public="false">
+            <argument key="$config" />
+            <tag name="console.command" />
+        </service>
+
+        <service id="Imper86\JobbyBundle\Factory\JobbyFactoryInterface" class="Imper86\JobbyBundle\Factory\JobbyFactory" autoconfigure="false" autowire="false" public="false">
+            <argument key="$config" />
+            <argument key="$projectDir">%kernel.project_dir%</argument>
+        </service>
+
+        <service id="Jobby\Jobby" autoconfigure="false" autowire="false" public="false">
+            <factory service="Imper86\JobbyBundle\Factory\JobbyFactoryInterface" method="generate" />
+        </service>
+    </services>
+</container>
