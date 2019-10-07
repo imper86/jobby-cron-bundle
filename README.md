@@ -9,6 +9,11 @@ As always use [composer](https://getcomposer.org/) to install bundle:
 composer require imper86/jobby-cron-bundle
 ```
 
+Add the following line to the crontab:
+```
+* * * * * cd /path/to/project && php bin/console i86:jobby:execute 1>> /dev/null 2>&1
+```
+
 ### Additional steps for apps without symfony flex
 Add bundle to your ```bundles.php```
 

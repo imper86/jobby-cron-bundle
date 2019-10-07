@@ -22,5 +22,11 @@
         "psr-4": {
             "Imper86\\JobbyBundle\\": "src"
         }
+    },
+    "extra": {
+        "thanks": {
+            "name": "hellogerard/jobby",
+            "url": "https://github.com/jobbyphp/jobby"
+        }
     }
 }
