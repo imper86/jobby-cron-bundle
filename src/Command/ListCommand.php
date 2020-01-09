@@ -54,5 +54,7 @@ class ListCommand extends Command
         }, array_keys($this->config['jobs']), $this->config['jobs']);
 
         $io->table($tableHeader, $tableData);
+
+        return 0;
     }
 }

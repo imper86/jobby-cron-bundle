@@ -36,5 +36,7 @@ class ExecuteCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->jobby->run();
+
+        return 0;
     }
 }
