@@ -31,10 +31,11 @@ class JobbyFactory implements JobbyFactoryInterface
     public function generate(): Jobby
     {
         $jobby = new Jobby($this->config['globals']);
+        $phpEx = $this->config['php_executable'];
 
         foreach ($this->config['jobs'] as $jobName => $jobConfig) {
             if ($jobConfig['is_symfony_command']) {
-                $jobConfig['command'] = "{$this->projectDir}/./bin/console {$jobConfig['command']}";
+                $jobConfig['command'] = "{$phpEx} {$this->projectDir}/bin/console {$jobConfig['command']}";
             }
 
             $jobby->add($jobName, $jobConfig);

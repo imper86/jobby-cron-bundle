@@ -26,6 +26,11 @@ class Configuration implements ConfigurationInterface
             $rootNode = $treeBuilder->root('imper86_jobby');
         }
 
+        $rootNode
+            ->children()
+            ->scalarNode('php_executable')->defaultValue('php')->end()
+            ->end();
+
         $this->addGlobalsNode($rootNode);
         $this->addJobsNode($rootNode);
 
